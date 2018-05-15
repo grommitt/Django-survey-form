@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type: "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <title>Survey Form</title>
+</head>
+<body>
+    <div class="container">
+        <form action="/results" method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                Name: <input class='form-control' type="text"
+                name='name' value='' placeholder="Name" />
+            </div>
+            <div class="form-group">
+                Location: 
+                <select class="form-control" name='location'  />
+                    <option value="Burbank">Burbank, CA</option>
+                    <option value="Seattle">Seattle, WA</option>
+                    <option value="Silicon-Valley">Silicon Valley, CA</option>
+                    <option value="Dallas">Dallas, TX</option>
+                    <option value="Chicago">Chicago, IL</option>
+                    <option value="Tulsa">Tulsa, OK</option>  
+                </select>
+                
+            </div>
+            <div class="form-group">
+                    Favorite Language: 
+                    <select class="form-control" name='language'  />
+                        <option value="Python">Python</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="C">C</option>
+                        <option value="CSharp">C#</option>
+                    </select>
+            </div> 
+            <div class="form-group">
+                   <p>Comment: </p> 
+                   <textarea name="comment" placeholder="comment here!"></textarea>
+            </div>
+
+            <input type="submit" class="btn btn-primary" value='Submit' />
+        </form>
+    </div>
+</body>
+</html>
